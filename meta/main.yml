@@ -4,7 +4,7 @@ galaxy_info:
   description: Installs Node.js 4.x
   license: license BSD
   min_ansible_version: 1.4
-  version: 0.0.1
+  version: 0.0.2
   platforms:
   - name: Ubuntu
     versions:
@@ -15,8 +15,10 @@ galaxy_info:
     versions:
     - jessie
     - wheezy
-  categories:
-  - packaging
-  - system
+  galaxy_tags::
+  - node.js
+  - npm
+  - npmrc
+  - deploy
   - web
 dependencies: []
