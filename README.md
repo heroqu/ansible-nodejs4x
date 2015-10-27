@@ -4,7 +4,7 @@ Ansible Role: Node.js 4.x
 Basic role to install Node.js version 4.x on Debian/Ubuntu and do some configuration of npm.
 
 Credits
-------------
+-------
 
 Substantially based on George Miroshnykov's role:
 https://github.com/laggyluke/ansible-role-nodejs
@@ -15,19 +15,25 @@ Requirements
 
 None.
 
-Disclaimer: the role is only tested on Ubuntu/Trusty. Hope it should work with other Debian/Ubuntu distros that are physically visible at Nodesource.com repo directory structure:
+Usage
+-----
 
-``` shell
-  https://deb.nodesource.com/node_4.x/dists/
-    - wily/    
-    - jessie/  
-    - precise/
-    - sid/     
-    - trusty/  
-    - vivid/   
-    - wheezy/  
+Install globally with ansible's ```ansible-galaxy``` builtin:
+
+``` sh
+ansible-galaxy install Heroqu.nodejs4x
 ```
 
+Alternatively: just git clone the whole repo to roles subdirectory inside your ansible project (my prefered way of doing it).
+
+Example Playbook
+----------------
+
+``` yaml
+- hosts: webserver
+    roles:
+      - Heroqu.nodejs4x
+```
 
 Role Variables
 --------------
@@ -60,15 +66,22 @@ On the other hand if you are not adding any lines to ~/.npmrc then this users is
 Dependencies
 ------------
 
-None
+None.
 
-Example Playbook
-----------------
+Disclaimer
+------------
 
-``` yaml
-  - hosts: webserver
-    roles:
-      - heroqu.nodejs4x
+The role is only tested on Ubuntu/Trusty. Hope it should work with other Debian/Ubuntu distros that are physically visible at Nodesource.com repo directory structure:
+
+``` shell
+  https://deb.nodesource.com/node_4.x/dists/
+    - wily/    
+    - jessie/  
+    - precise/
+    - sid/     
+    - trusty/  
+    - vivid/   
+    - wheezy/  
 ```
 
 License
