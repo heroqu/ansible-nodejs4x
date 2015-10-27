@@ -45,6 +45,7 @@ Available variables and their defaults specified in ```defaults/main.yml```:
 One can specify any number of lines to be applied to ```~/.npmrc``` file:
 
 ``` yaml
+nodejs4x:
   npmrc_lines:
   - { line: 'prefix=~/.npm-packages', state: 'present', regexp: '^prefix\s*=' }
 ```
@@ -56,6 +57,7 @@ Any other options can be added to (or removed from - using ```state: 'absent'```
 #### Deploy user (for npm configuration)
 
 ``` yaml
+nodejs4x:
   deploy_user: '{{ ansible_ssh_user }}'
 ```
 
