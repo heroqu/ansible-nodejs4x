@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  author: Heroqu
+  description: Installs Node.js 4.x
+  license: license BSD
+  min_ansible_version: 1.4
+  version: 0.0.1
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+    - vivid
+  - name: Debian
+    versions:
+    - jessie
+    - wheezy
+  categories:
+  - packaging
+  - system
+  - web
+dependencies: []

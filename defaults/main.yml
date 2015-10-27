@@ -1,0 +1,9 @@
+---
+nodejs4x:
+
+# npm configuration lines to be applied to users' .npmrc file
+- npmrc_lines:
+  - { line: 'prefix=~/.npm-packages', state: 'present', regexp: '^prefix\s*=' }
+
+# user to be used for npm configuration
+- deploy_user: '{{ ansible_ssh_user }}'
