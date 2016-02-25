@@ -33,13 +33,14 @@
 
 - name: Add lines to .npmrc
   lineinfile: >
-    dest=~/.npmrc
+    dest='{{ nodejs4x.deploy_user_home }}'/.npmrc
     line='{{ item.line }}'
     state='{{ item.state }}'
     regexp='{{ item.regexp }}'
     create=yes
     mode=0644
+    owner='{{ nodejs4x.deploy_user }}'
+    group='{{ nodejs4x.deploy_group }}'
   with_items: '{{ nodejs4x.npmrc_lines }}'
   sudo: yes
-  sudo_user: '{{ nodejs4x.deploy_user }}'
   when: nodejs4x.npmrc_lines|length != 0
